@@ -10,8 +10,9 @@ root.render(
     <App />
   </React.StrictMode>
 );
+//this file is calling from public/index.html file where div with id 'root' is present
+//root created using ReactDOM.createRoot method and rendering App component inside it
+//root is calling next with App.js file.
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();
