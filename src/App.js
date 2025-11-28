@@ -1,11 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
 import PersInfo from './Components/PersInfo';
 
 function App() {
   return (
-    <div className="App">
-      <PersInfo/>
+    <div className="Pers">
+      <PersInfo name="Name1" age="99"/>
+       <PersInfo name="Name2" age="89"/>
+        <PersInfo name="Name3" age="22"/>
     </div>
   );
 }
