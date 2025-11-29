@@ -1,14 +1,24 @@
 
 import './App.css';
 import PersInfo from './Components/PersInfo';
-
+let i=0;
+// in console is incriment by 1 but ui not change because react not aware of this change
+const addVal=()=>{
+i++;
+console.log(i);
+}
 function App() {
-  return (
+  return (<>
     <div className="Pers">
       <PersInfo name="Name1" age="99"/>
        <PersInfo name="Name2" age="89"/>
         <PersInfo name="Name3" age="22"/>
     </div>
+    <div>
+      <h1>{i}</h1>
+      <button onClick={addVal}>incriment</button>
+    </div>
+    </>
   );
 }
 
