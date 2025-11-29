@@ -25,6 +25,7 @@ import PersInfo from './Components/PersInfo';
 let i=1;
 function App() {
   const [i,setCount]=useState(10);
+  const [flag,setFlag]=useState(true);
   // const addVal=()=>{
   //   setCount(i+1);
   // }
@@ -53,7 +54,11 @@ function App() {
      <button className='cb' onClick={()=>changeCounter("+")}>incriment</button>
      <button className='cb' onClick={()=>changeCounter("-")}>decriment</button>
     </div>
-    </>
+    <div>
+      <h1>{flag.toString()}</h1>
+      <button onClick={()=>{setFlag(!flag)}}>Toggel</button>
+      </div>   
+       </>
   );
 }
 
