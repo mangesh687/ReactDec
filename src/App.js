@@ -25,16 +25,21 @@ import PersInfo from './Components/PersInfo';
 let i=1;
 function App() {
   const [i,setCount]=useState(10);
-  const addVal=()=>{
-    setCount(i+1);
-  }
-  const adddec=()=>{
-    setCount(i-1);
-  }
+  // const addVal=()=>{
+  //   setCount(i+1);
+  // }
+  // const adddec=()=>{
+  //   setCount(i-1);
+  // }
 
 // function App() {
-//   const [addVal,setCount]=useState(()=>initialState());
-  
+//   const [addVal,setCount]=useState(()=>initialState());// lazy initial state
+  const changeCounter=(val)=>{
+   if(val==="+"){
+    setCount(i+1);
+   }else if(val==="-"){
+    setCount(i-1);
+   }}
   return (<>
     <div className="Pers">
       <PersInfo name="Name1" age="99"/>
@@ -45,8 +50,8 @@ function App() {
       {/* <h1>{addVal}</h1> */}
       <h1>{i}</h1>
      {/* // <button onClick={()=>{setCount(addVal+1)}}>incriment</button> */}
-     <button onClick={addVal}>incriment</button>
-     <button onClick={adddec}>decriment</button>
+     <button onClick={()=>changeCounter("+")}>incriment</button>
+     <button onClick={()=>changeCounter("-")}>decriment</button>
     </div>
     </>
   );
