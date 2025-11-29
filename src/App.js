@@ -18,12 +18,23 @@ import PersInfo from './Components/PersInfo';
 //     console.log(i+1);
 //   }
 // lazy initial state :- if the initial state is the result of an expensive computation, you can provide a function to useState.
-function initialState(){
-  console.log("initial state called"+Date.now());
-  return 0;
-}
+// function initialState(){
+//   console.log("initial state called"+Date.now());
+//   return 0;
+// }
+let i=1;
 function App() {
-  const [addVal,setCount]=useState(()=>initialState());
+  const [i,setCount]=useState(10);
+  const addVal=()=>{
+    setCount(i+1);
+  }
+  const adddec=()=>{
+    setCount(i-1);
+  }
+
+// function App() {
+//   const [addVal,setCount]=useState(()=>initialState());
+  
   return (<>
     <div className="Pers">
       <PersInfo name="Name1" age="99"/>
@@ -31,8 +42,11 @@ function App() {
         <PersInfo name="Name3" age="22"/>
     </div>
     <div>
-      <h1>{addVal}</h1>
-      <button onClick={()=>{setCount(addVal+1)}}>incriment</button>
+      {/* <h1>{addVal}</h1> */}
+      <h1>{i}</h1>
+     {/* // <button onClick={()=>{setCount(addVal+1)}}>incriment</button> */}
+     <button onClick={addVal}>incriment</button>
+     <button onClick={adddec}>decriment</button>
     </div>
     </>
   );
@@ -45,4 +59,4 @@ export default App;
 //in App.js we can write our custom code to render UI and components we can create here and use them here as well.
 //what is difftence betwwen npm and npx?
 //npm is a package manager that allows you to install, update, and manage packages (libraries or modules) for your Node.js projects. It is used to handle dependencies and manage the packages required for your application.
-//npx is a package runner that comes with npm (version 5.2.0 and higher). It allows you to execute packages without installing them globally on your system. npx is often used to run command-line tools or scripts directly from the npm registry or from local project dependencies.
+//npx is a package runner that comes with npm (version 5.2.0 and higher). It allows you to execute //packages without installing them globally on your system. npx is often used to run command-line tools or scripts directly from the npm registry or from local project dependencies.
