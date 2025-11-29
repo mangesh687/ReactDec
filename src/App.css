@@ -57,4 +57,10 @@
 .person-card h2 {
   margin: 8px 0;
 }
+.cb{
+  margin:50px;
+  padding:50px;
+  font-size:25px;
+  color: violet;
+}
 

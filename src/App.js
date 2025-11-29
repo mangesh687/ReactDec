@@ -50,8 +50,8 @@ function App() {
       {/* <h1>{addVal}</h1> */}
       <h1>{i}</h1>
      {/* // <button onClick={()=>{setCount(addVal+1)}}>incriment</button> */}
-     <button onClick={()=>changeCounter("+")}>incriment</button>
-     <button onClick={()=>changeCounter("-")}>decriment</button>
+     <button className='cb' onClick={()=>changeCounter("+")}>incriment</button>
+     <button className='cb' onClick={()=>changeCounter("-")}>decriment</button>
     </div>
     </>
   );
