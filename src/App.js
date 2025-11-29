@@ -10,12 +10,20 @@ import PersInfo from './Components/PersInfo';
 // }
 // we use state than the first import useState from react in app.js file --> useState mai (state value and setter function) rahata h -->state value we have to initalize it with some value such as Number,Boolean , string , Array ,object Literal -->Setter function use to which allow you to update state value and inform react and load -->
 
+
+// function App() {
+//   const [i,setCount]=useState(0);
+//   const addVal=()=>{
+//     setCount(i+1);
+//     console.log(i+1);
+//   }
+// lazy initial state :- if the initial state is the result of an expensive computation, you can provide a function to useState.
+function initialState(){
+  console.log("initial state called"+Date.now());
+  return 0;
+}
 function App() {
-  const [i,setCount]=useState(0);
-  const addVal=()=>{
-    setCount(i+1);
-    console.log(i+1);
-  }
+  const [addVal,setCount]=useState(()=>initialState());
   return (<>
     <div className="Pers">
       <PersInfo name="Name1" age="99"/>
@@ -23,8 +31,8 @@ function App() {
         <PersInfo name="Name3" age="22"/>
     </div>
     <div>
-      <h1>{i}</h1>
-      <button onClick={addVal}>incriment</button>
+      <h1>{addVal}</h1>
+      <button onClick={()=>{setCount(addVal+1)}}>incriment</button>
     </div>
     </>
   );
