@@ -1,13 +1,21 @@
-
+import { useState } from 'react';
 import './App.css';
 import PersInfo from './Components/PersInfo';
-let i=0;
-// in console is incriment by 1 but ui not change because react not aware of this change
-const addVal=()=>{
-i++;
-console.log(i);
-}
+// let i=0;
+// in console is incriment by 1 but ui not change because react not aware of this change that why use the State
+
+// const addVal=()=>{
+// i++;
+// console.log(i);
+// }
+// we use state than the first import useState from react in app.js file --> useState mai (state value and setter function) rahata h -->state value we have to initalize it with some value such as Number,Boolean , string , Array ,object Literal -->Setter function use to which allow you to update state value and inform react and load -->
+
 function App() {
+  const [i,setCount]=useState(0);
+  const addVal=()=>{
+    setCount(i+1);
+    console.log(i+1);
+  }
   return (<>
     <div className="Pers">
       <PersInfo name="Name1" age="99"/>
